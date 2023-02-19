@@ -1,0 +1,7 @@
+#We are asked to put the username and password for LOGIN
+# considering the username and password to be same i type " JOE"
+# I WAS SUCCESFULLY ABLE TO LOGIN BUT WAS NOT ABLE TO GET ANY FLAG
+# So I go to " INSPECT " 
+# The value of of " admin " is false, so i change it to true " True "
+# Now i again login, this time using username and password as " admin "
+# i now get the flag which is " picoCTF{th3_c0nsp1r4cy_l1v3s_6edb3f5f} "

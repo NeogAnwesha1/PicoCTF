@@ -1,0 +1,32 @@
+#try to open the file but wont open 
+#so i try to unzip it
+
+ls
+'Forensics is fun.pptm'   shark1.pcapng   tunn3l_v1s10n
+
+      #try unzip it and save in a folder called "macro"
+
+unzip Forensics\ is\ fun.pptm -d macro
+
+cd macro
+ls
+'[Content_Types].xml'   docProps   ppt   _rels
+
+   #since the file was .pptm we read "ppt"
+
+cd ppt
+ls
+presentation.xml  presProps.xml  _rels  slideLayouts  slideMasters  slides  tableStyles.xml  theme  vbaProject.bin  viewProps.xml
+cd slideMasters
+ls
+hidden  _rels  slideMaster1.xml
+cat hidden
+Z m x h Z z o g c G l j b 0 N U R n t E M W R f d V 9 r b j B 3 X 3 B w d H N f c l 9 6 M X A 1 f Q 
+
+       #the result looks like base 64 encrypted, but first we need to remove spaces
+
+cat hidden | sed 's/ //g'
+ZmxhZzogcGljb0NURntEMWRfdV9rbjB3X3BwdHNfcl96MXA1fQ
+
+cat hidden | sed 's/ //g' | base64 -d
+flag: picoCTF{D1d_u_kn0w_ppts_r_z1p5}

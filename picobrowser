@@ -1,0 +1,6 @@
+# when we try to get the flag it response back as " You're not picobrowser! Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:91.0) Gecko/20100101 Firefox/91.0 "
+# as the hint suggest i dont have to download new browser for it
+# so i go to " INSPECT ", then to " NETWORKS "
+# under the headers section i click on the " EDIT AND RESEND " button
+# under "user" section i change my browser name from " MOZILLA" to " PICOBROWSER" and press send button
+# then i go the "response" section where i get flag, which is " picoCTF{p1c0_s3cr3t_ag3nt_51414fa7} "

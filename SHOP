@@ -1,0 +1,77 @@
+
+#connect to server
+$ nc mercury.picoctf.net 42159
+Welcome to the market!
+=====================
+You have 40 coins
+	Item		Price	Count
+(0) Quiet Quiches	10	12
+(1) Average Apple	15	8
+(2) Fruitful Flag	100	1
+(3) Sell an Item
+(4) Exit
+Choose an option: 
+0
+How many do you want to buy?
+1
+You have 30 coins
+	Item		Price	Count
+(0) Quiet Quiches	10	11
+(1) Average Apple	15	8
+(2) Fruitful Flag	100	1
+(3) Sell an Item
+(4) Exit
+#whenever we buy an item the coins is reduced 
+Choose an option: 
+3
+Your inventory
+(0) Quiet Quiches	10	1
+(1) Average Apple	15	0
+(2) Fruitful Flag	100	0
+What do you want to sell? 
+0
+How many?
+1
+You have 40 coins
+	Item		Price	Count
+(0) Quiet Quiches	10	11
+(1) Average Apple	15	8
+(2) Fruitful Flag	100	1
+(3) Sell an Item
+(4) Exit
+Choose an option: 
+3
+Your inventory
+(0) Quiet Quiches	10	0
+(1) Average Apple	15	0
+(2) Fruitful Flag	100	0
+What do you want to sell? 
+asdf
+#asdf is a command line interface tool, or CLI tool, for managing different runtime versions across multiple programming languages.
+How many?
+You have 40 coins
+   Item		Price	Count
+(0) Quiet Quiches	10	11
+(1) Average Apple	15	8
+(2) Fruitful Flag	100	1
+(3) Sell an Item
+(4) Exit
+Choose an option: 
+How many do you want to buy?
+#Buy in negative so that its price gets added to our no. of coins
+-100
+You have 1040 coins
+	Item		Price	Count
+(0) Quiet Quiches	10	111
+(1) Average Apple	15	8
+(2) Fruitful Flag	100	1
+(3) Sell an Item
+(4) Exit
+Choose an option: 
+2
+How many do you want to buy?
+1
+Flag is:  [112 105 99 111 67 84 70 123 98 52 100 95 98 114 111 103 114 97 109 109 101 114 95 55 57 55 98 50 57 50 99 125]
+#USE AN DECIMAL TO ASCII CONVERTER TO CONVERT THE NUMBERS
+# REQ FLAG IS " picoCTF{b4d_brogrammer_797b292c} "
+

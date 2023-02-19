@@ -1,0 +1,16 @@
+#Open the file in Bless Hex Editor
+#From the Hexedit we get to know that the file is a bmp, so we add the extension and try to open it
+#but the file continues to show some error and does not open, i.e the bytes have been corrupted
+#so we search bmp file format in wikipedia.
+# 0A contains "BA" 0B Contains "D0"
+# at 0A starting address, of the byte where the bitmap image data (pixel array) can be found. 
+# Therefore, we change the offset info header (0A) to 36 (SIZE of BITMAPINFOHEADER + 14 = 40+14 = 54, which is "36 Hex") and 0B to 00
+# Again 0E contains "BA" 0F Contains "D0"
+#Therefore, we change the offset info header (0E) to 38 (the size of this header+ 16 = 40+16 = 56, which is "38 Hex") and 0B to 00
+#Now try to open the " tunn3l v1s10n.bmp " file again, this time it opens but it shows " notaflag{sorry}"
+# So we try to change the height of bitmap, which was 01 to 02
+# even now the flag is not visible even though the height has increased
+# so now i try to change the height from 02 to 03. Now the flag is somewhat visible.
+# Now i try to make the image bigger by changing " 32" to " 42"
+# the flag is visible properly
+# req flag "picoCTF{qu1t3_a_v13w_2020}"

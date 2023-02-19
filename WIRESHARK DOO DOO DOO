@@ -1,0 +1,22 @@
+WHEN WE OPEN THE GIVEN FILE IN WIRESHARK WE GET A LOT OF ENCRYPTED PACKETS
+#823	7.187055	192.168.38.104	18.222.37.134	HTTP	501	GET / HTTP/1.1 
+#only this looked slightly not encrypted
+#by clicking on it we press follow, then http
+#first we go to PROTOCOL HIERACHY and see that hypertext transfer protocol has more packets.
+#we can type http in the menu box to use it as a filter.
+#when we get the filtered data, go to the http menu, we see "CONTENT TYPE " ehich shows "encrypted" 
+#we can use that to filter out the encrypted http data by putting ! before it in the menu box
+
+http&&!(http.content_type == "multipart/encrypted;protocol=\"application/HTTP-Kerberos-session-encrypted\";boundary=\"Encrypted Boundary\"")
+
+# we are now left with four packets
+
+823	7.187055	192.168.38.104	18.222.37.134	HTTP	501	GET / HTTP/1.1 
+827	7.236537	18.222.37.134	192.168.38.104	HTTP	384	HTTP/1.1 200 OK  (text/html)
+962	18.241554	192.168.38.104	169.254.169.254	HTTP	235	GET /latest/meta-data/instance-action HTTP/1.1 
+964	18.242484	169.254.169.254	192.168.38.104	HTTP	311	HTTP/1.0 200 OK  (text/plain)
+
+#we can now inspect them by clicking on it, follow, HTTP STREAM
+
+#we get a ROT13 encrypted flag " Gur synt vf cvpbPGS{c33xno00_1_f33_h_qrnqorrs} "
+#by using an online  ROT13 converter we get " The flag is picoCTF{p33kab00_1_s33_u_deadbeef} "

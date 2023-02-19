@@ -1,0 +1,32 @@
+OPEN THE FILE IN WIRESHARK
+#THERE SEEMS TO BE A LOT OF "TFTP" PACKETS
+#GO TO FILE, EXTRACT, TFTP.
+#WE GET A "INSTRUCTIONS" AND "PLAN" TEXT FILE, 3 PICTURE.BMP FILES AND A DEBIAN PROGRAM
+#THE THE "INSTRUCTIONS" AND "PLAN' FILE SEEMS TO BE " ROT13 " encrypted SO WE GO TO A ONLINE ROT DECODER
+
+#FROM "INSTRUCTIONS" FILE WE GET :- CGBHEGENSSVPFBJRZHFGQVFTHVFRBHESYNTGENAFSRE.SVTHERBHGNJNLGBUVQRGURSYNTNAQVJVYYPURPXONPXSBEGURCYNA
+#THIS WHEN DECODED BECOMES :- PTOURTRAFFICSOWEMUSTDISGUISEOURFLAGTRANSFER.FIGUREOUTAWAYTOHIDETHEFLAGANDIWILLCHECKBACKFORTHEPLAN
+
+#FROM "PLAN" FILE WE GET :- CGBHEGENSSVPFBJRZHFGQVFTHVFRBHESYNTGENAFSRE.SVTHERBHGNJNLGBUVQRGURSYNTNAQVJVYYPURPXONPXSBEGURCYNA
+#THIS WHEN DECODED BECOMES :- IUSEDTHEPROGRAMANDHIDITWITH-DUEDILIGENCE.CHECKOUTTHEPHOTOS
+
+#So now we have the hint that flag is in program.deb and in one of the picture.bmp
+
+#so we inspect the file through steghide
+#we first try "picture1.bmp"
+
+steghide extract -sf picture1.bmp -p DUEDILIGENCE
+steghide: could not extract any data with that passphrase!
+
+#as we did not get any data from there we try "picture2.bmp"
+
+steghide extract -sf picture2.bmp -p DUEDILIGENCE
+steghide: could not extract any data with that passphrase!
+
+#as we did not get any data from there we try "picture2.bmp"
+
+steghide extract -sf picture3.bmp -p DUEDILIGENCE
+wrote extracted data to "flag.txt".
+
+cat flag.txt
+picoCTF{h1dd3n_1n_pLa1n_51GHT_18375919}

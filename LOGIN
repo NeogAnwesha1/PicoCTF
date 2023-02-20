@@ -1,0 +1,16 @@
+#WE FIRST TRY SQL INJECTION
+#FOR USERNAME AND PASSWORD : "admin' or 1=1--
+#IT SHOWS USERNAME INCORRECT
+#IF WE JUST TYPE ADMIN FOR USERNAME THEN IT SHOWS PASSWORD IS INCORRECT
+#WE THEN GO INTO THE SOURCE CODE (ctrl+U)
+# WE CAN SEE A " index " File in the script and when pressed on it we get :
+" (async()=>{await new Promise((e=>window.addEventListener("load",e))),document.querySelector("form").addEventListener("submit",(e=>{e.preventDefault();const r={u:"input[name=username]",p:"input[name=password]"},t={};for(const e in r)t[e]=btoa(document.querySelector(r[e]).value).replace(/=/g,"");return"YWRtaW4"!==t.u?alert("Incorrect Username"):"cGljb0NURns1M3J2M3JfNTNydjNyXzUzcnYzcl81M3J2M3JfNTNydjNyfQ"!==t.p?alert("Incorrect Password"):void alert(`Correct Password! Your flag is ${atob(t.p)}.`)}))})(); "
+# here we find " btoa " which basically decrypts base64 encrypted file
+# so using this we can get the username and password
+
+echo 'YWRtaW4' | base64 -d
+adminbase64: invalid input
+echo 'cGljb0NURns1M3J2M3JfNTNydjNyXzUzcnYzcl81M3J2M3JfNTNydjNyfQ' | base64 -d
+picoCTF{53rv3r_53rv3r_53rv3r_53rv3r_53rv3r}base64: invalid input
+
+#we get the req flag as our password

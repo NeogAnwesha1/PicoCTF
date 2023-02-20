@@ -1,0 +1,17 @@
+import numpy as np
+from PIL import Image
+
+# Open images
+img = Image.open("scrambled1.png")
+img1 = Image.open("scrambled2.png")
+
+# Make into Numpy arrays
+imgnp = np.array(im1)
+img1np = np.array(im2)
+
+# Add images
+result = img1np + imgnp
+# Convert back to PIL image and save
+Image.fromarray(result).save('result.png')
+
+#the req flag is "picoCTF{0542dc1d}"

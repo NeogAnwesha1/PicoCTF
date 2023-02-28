@@ -1,0 +1,14 @@
+#I first checked the source code and then went to "Inspect" but coul not find anything
+#according the hint given, i knew it was web crawler/index pages of website i need to check
+#i used robots.txt to check what the users did not want indexed. ( A robots.txt file tells search engine crawlers which URLs the crawler can access on your site. )
+
+" https://jupiter.challenges.picoctf.org/problem/60915/robots.txt "
+    User-agent: *
+    Disallow: /8028f.html
+
+#it basically diallowed all user agents to see /8028f.html
+# so now we add the above to the given link
+
+https://jupiter.challenges.picoctf.org/problem/60915//8028f.html
+    Guess you found the robots
+picoCTF{ca1cu1at1ng_Mach1n3s_8028f}

@@ -1,0 +1,22 @@
+#I open the file in image viewer, cant directly find the flag there
+#opening the file in hex editer, i get " <?xml version= "
+#so i make a copy of original svg file and then change the extension to xml
+# Then i try reading the file(check its code)
+
+Downloads$ cat drawing.flag.xml
+
+#when i see the code it has made the font very small which is why it was not visible in the picture
+#instead of changing the font, i can see content of flag in code itself so i try to get them together using grep
+
+cat drawing.flag.xml | grep tspan
+       id="text3723"><tspan
+         id="tspan3748">p </tspan><tspan
+         id="tspan3754">i </tspan><tspan
+         id="tspan3756">c </tspan><tspan
+         id="tspan3758">o </tspan><tspan
+         id="tspan3760">C </tspan><tspan
+         id="tspan3762">T </tspan><tspan
+         id="tspan3764">F { 3 n h 4 n </tspan><tspan
+         id="tspan3752">c 3 d _ d 0 a 7 5 7 b f }</tspan></text>
+
+#now it becomes easier to get the flag which is " picoCTF{3nh4nc3d_d0a757bf}

@@ -1,0 +1,7 @@
+#Upon downloading the file we get a very long text
+#So i use GREP to get the picoCTF flag
+
+Downloads$ ls
+Downloads$ grep pico anthem.flag.txt
+      we think that the men of picoCTF{gr3p_15_@w3s0m3_2116b979}
+#i can also open the file in text editor and use "ctrl+F" to find the flag

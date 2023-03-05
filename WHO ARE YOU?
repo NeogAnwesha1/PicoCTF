@@ -1,0 +1,29 @@
+#After we open the link, it says only PicoBrowser allowed in the site
+#So we go to "inspect", "Network", "Header", "Edit And Resend" , then change the "User Agent"  to PicoBrowser
+
+it then says " I don't trust users visiting from another site."
+# so we use "referer" (The Referer header allows a server to identify referring pages that people are visiting from or where requested resources are being used.)
+  Referer: http://mercury.picoctf.net:38322/
+
+it then says "Sorry, this site only worked in 2018."
+so we change the date using "Date" header
+  Date: Wed, 01 Mar 2018 07:28:00 GMT
+ 
+it then says " I don't trust users who can be tracked."
+so we use DNT (DO NOT TRACK)
+DNT: 1
+
+it then says " This website is only for people from Sweden."
+So we now use X-Forwarded For and google asearch the IP address for Sweden
+  X-Forwarded-For: 31.3.152.55
+
+it then says " You're in Sweden but you don't speak Swedish?"
+So we change the Accept-Language from US english to swedish 
+  Accept-Language: sv,en;q=0.5
+  
+Finally we get our Flag 
+
+
+What can I say except, you are welcome
+
+picoCTF{http_h34d3rs_v3ry_c0Ol_much_w0w_b22d773c}

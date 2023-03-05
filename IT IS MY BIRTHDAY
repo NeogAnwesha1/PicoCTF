@@ -1,0 +1,9 @@
+#I TRY TO FIND MD5 HASH FILES THAT COLLIDE IN GOOGLE
+#I DOWNLOADED THE FOLLOWING FILES:
+    hello. MD5 Sum: da5c61e1edc0f18337e46418e48c1290
+    erase. MD5 Sum: da5c61e1edc0f18337e46418e48c1290 
+#According to the second hint, I add extension ".php" and upload the files on the site
+# it shows " Not a PDF! "
+# So i change the extension to ".pdf" files and upload it in the site and get the required flag.
+
+FLAG: picoCTF{c0ngr4ts_u_r_1nv1t3d_73b0c8ad}

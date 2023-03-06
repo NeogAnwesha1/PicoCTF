@@ -1,0 +1,54 @@
+#I FIRST CONNECTED TO THE SERVER AND LOGGED IN WITH GIVEN PASSWORD
+psql -h saturn.picoctf.net -p 63889 -U postgres pico
+Password for user postgres: 
+psql (12.14 (Ubuntu 12.14-0ubuntu0.20.04.1), server 14.2 (Debian 14.2-1.pgdg110+1))
+WARNING: psql major version 12, server major version 14.
+         Some psql features might not work.
+Type "help" for help.
+
+
+#i then typed help and then "\?" inorder to get the psql commands
+
+
+
+
+pico=# \l           (used for listing databases)
+
+                                 List of databases
+   Name    |  Owner   | Encoding |  Collate   |   Ctype    |   Access privileges   
+-----------+----------+----------+------------+------------+-----------------------
+ pico      | postgres | UTF8     | en_US.utf8 | en_US.utf8 | 
+ postgres  | postgres | UTF8     | en_US.utf8 | en_US.utf8 | 
+ template0 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+           |          |          |            |            | postgres=CTc/postgres
+ template1 | postgres | UTF8     | en_US.utf8 | en_US.utf8 | =c/postgres          +
+           |          |          |            |            | postgres=CTc/postgres
+(4 rows)
+
+pico=# \c pico    (connects to a  specific database) 
+psql (12.14 (Ubuntu 12.14-0ubuntu0.20.04.1), server 14.2 (Debian 14.2-1.pgdg110+1))
+WARNING: psql major version 12, server major version 14.
+         Some psql features might not work.
+You are now connected to database "pico" as user "postgres".
+
+
+
+pico-# \dt         (lists the tables in the said database)
+
+         List of relations
+ Schema | Name  | Type  |  Owner   
+--------+-------+-------+----------
+ public | flags | table | postgres
+(1 row)
+
+
+        ^
+pico=#  SELECT*from flags;
+ id | firstname | lastname  |                address                 
+----+-----------+-----------+----------------------------------------
+  1 | Luke      | Skywalker | picoCTF{L3arN_S0m3_5qL_t0d4Y_21c94904}
+  2 | Leia      | Organa    | Alderaan
+  3 | Han       | Solo      | Corellia
+(3 rows)
+
+the required flag is "picoCTF{L3arN_S0m3_5qL_t0d4Y_21c94904}"

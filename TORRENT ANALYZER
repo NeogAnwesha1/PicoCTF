@@ -1,0 +1,17 @@
+#OPEN THE FILE IN WIRESHARK
+#AS SUGGESTED IN THE HINTS, ENABLE BIT TORRENT
+
+#THEN FILTER all "bt-dht" files
+#I WILL BE LOOKING FOR TORRENT FILES THAT CONTAINS INFO_HASH (info_hash : SHA1 Hash contains specific info about the torrent file such as length path name etc)
+
+bt-dht contains info_hash
+
+#Now I only have torrents that contain info_hash
+#Now i try looking for info hash that are similar or are repetative mostly
+#I can do that by applying the "value" as a coloumn 
+#I can see the most repetative hash value is "..........  e2467cbf021192c241367b892230dc1e05c0580e,q,get_peers,t,6770c723,y,q	BitTorrent DHT Protocol "
+
+#Inorder to decode the hash, i go to google and copy paste the value of the hash as we are looking for a filename that ends with .iso
+
+"ubuntu-19.10-desktop-amd64.iso" is the required filename 
+" picoCTF{ubuntu-19.10-desktop-amd64.iso} " is the req flag

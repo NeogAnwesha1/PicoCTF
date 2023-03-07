@@ -12,14 +12,14 @@
                       - WPA-ing Out
                       - Torrent Analyzer
                       - Advanced Potion Making
-                      - It Is My Birthday
+                      - What Lies Within
                     
 # WEB EXPLOITATION CHALLENGES : 7  DONE AFTER LAST INTERVIEW
 
                               - CAAS
                               - WHERE ARE THE ROBOTS?
                               - WHO ARE YOU?
-                              - WHAT LIES WITHIN
+                              - IT IS MY BIRTHDAY
                               - IRISH-NAME-REPO
                               - SQL DIRECT
                               - SQLiLite

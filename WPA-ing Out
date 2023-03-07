@@ -1,0 +1,14 @@
+# I first try to run the file in wireshark, so as to export a file "rockyou.txt" from the packets, but it was not much help.
+# Then i try googling about rockyou.txt and realize it is a file used to crack passwords and to breach the security of any web application
+# I download the 'rockyou.txt" from google
+
+# As suggested in the hints i try learning about "aircrack -ng" 
+    aircrack -ng --help
+    
+# So i get the "-w <words> : path to wordlist(s) filename(s)
+
+
+# hence i use the command " aircrack -ng -w rockyou.txt wpa-ing out.pcap "
+# after running it i get " KEY FOUND! [ mickeymouse ]
+
+# req flag is " picoCTF{mickeymouse} "

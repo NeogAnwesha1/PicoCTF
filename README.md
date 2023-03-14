@@ -1,6 +1,6 @@
 # PicoCTF Challenges (extended taskphase)
 
-# TOTAL 14 CHALLENGES DONE AFTER LAST INTERVIEW
+# TOTAL 17 CHALLENGES DONE AFTER LAST INTERVIEW
 
 # DOMAIN CHOSEN : FORENSICS AND WEB EXPLOITATION
 
@@ -14,7 +14,7 @@
                       - Advanced Potion Making
                       - What Lies Within
                     
-# WEB EXPLOITATION CHALLENGES : 7  DONE AFTER LAST INTERVIEW
+# WEB EXPLOITATION CHALLENGES : 10 DONE AFTER LAST INTERVIEW
 
                               - CAAS
                               - WHERE ARE THE ROBOTS?
@@ -23,4 +23,7 @@
                               - IRISH-NAME-REPO
                               - SQL DIRECT
                               - SQLiLite
+                              - WEB GAUNTLET 2
+                              - WEB GAUNTLET 3
+                              - ROBOTO SANS
                               

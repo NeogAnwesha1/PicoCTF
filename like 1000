@@ -1,0 +1,11 @@
+# I try extract the given archived file using xvf and tar
+    tar xvf 1000.tar
+        999.tar
+        filler.txt
+        
+ # Instead of repeatedly extracting all the 999 archived files i use "tac"  "seq" "tar" and "xvf" to extract all files at once
+          for x in $(seq 1000 |tac); do tar xvf $x.tar; done
+
+#the last file was "flag.png" and upon opening it we get the req flag
+
+    "picoCTF{l0t5_0f_TAR5}"

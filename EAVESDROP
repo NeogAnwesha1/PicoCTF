@@ -1,0 +1,58 @@
+# As the hint says "a packet capture, private conversation, and file transfer"
+# After opening the file in wireshark, i try to open the udp stream
+# i dont find anything there, so i tried opening tcp stream
+# in "eq 0" of tcp stream i find the private conversation
+
+Hey, how do you decrypt this file again?
+You're serious?
+Yeah, I'm serious
+*sigh* openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
+Ok, great, thanks.
+Let's use Discord next time, it's more secure.
+C'mon, no one knows we use this program like this!
+Whatever.
+Hey.
+Yeah?
+Could you transfer the file to me again?
+Oh great. Ok, over 9002?
+Yeah, listening.
+Sent it
+Got it.
+You're unbelievable
+
+
+#so now we try to filter "port 9002" 
+#all packet capture we got are of "eq 2" of tcp stream 
+#So we save the data with the filename "file.des3" as given in the private converstaion
+# now we use the given code to open and decrypt the file 
+
+openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+bad decrypt
+140033218811200:error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt:../crypto/evp/evp_enc.c:610:
+
+#Since it says bad decrypt, i go back to wireshark and tcp stream 2 and convert the file from "ASCII" TO "RAW"  and then save the file under same filename
+
+#Now i try to run the given code again
+openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+bad decrypt
+140033218811200:error:06065064:digital envelope routines:EVP_DecryptFinal_ex:bad decrypt:../crypto/evp/evp_enc.c:610:
+
+openssl des3 -d -salt -in file.des3 -out file.txt -k supersecretpassword123
+
+*** WARNING : deprecated key derivation used.
+Using -iter or -pbkdf2 would be better.
+
+ls
+
+bin      Documents  file.des3  Music     Public  Templates
+Desktop  Downloads  file.txt   Pictures  snap    Videos
+
+cat file.txt
+
+picoCTF{nc_73115_411_5786acc3}
+

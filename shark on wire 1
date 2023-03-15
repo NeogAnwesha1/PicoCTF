@@ -1,0 +1,7 @@
+#After we open the file in wireshark i go to statistics -> protocol hierarchy
+#I find a lot of "User Datagram Protocol(UDP)" packets
+#So i filter them out 
+#Since the hints mentioned about "streams", i select any random packet the left click on it -> follow -> UDP streams
+# Then i sroll through the streams one by one
+# in "udp.stream eq 6" i got my required flag
+#picoCTF{StaT31355_636f6e6e}

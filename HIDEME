@@ -1,0 +1,47 @@
+# After downloading i get a file "flag.png" with the picoCTF LOGO 
+#So we try to get the text content of the file
+    strings flag.png
+#upon looking through, i see " secret/flag.png " which indicates path to a hidden files.
+# To confirm, i use binwalk
+
+         binwalk flag.png
+         
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 512 x 504, 8-bit/color RGBA, non-interlaced
+41            0x29            Zlib compressed data, compressed
+39739         0x9B3B          Zip archive data, at least v1.0 to extract, name: secret/
+39804         0x9B7C          Zip archive data, at least v2.0 to extract, compressed size: 2876, uncompressed size: 3029, name: secret/flag.png
+42915         0xA7A3          End of Zip archive, footer length: 22
+         
+# so we extract " secret/flag.png"
+
+      binwalk -e flag.png
+
+DECIMAL       HEXADECIMAL     DESCRIPTION
+--------------------------------------------------------------------------------
+0             0x0             PNG image, 512 x 504, 8-bit/color RGBA, non-interlaced
+41            0x29            Zlib compressed data, compressed
+39739         0x9B3B          Zip archive data, at least v1.0 to extract, name: secret/
+39804         0x9B7C          Zip archive data, at least v2.0 to extract, compressed size: 2876, uncompressed size: 3029, name: secret/flag.png
+42915         0xA7A3          End of Zip archive, footer length: 22
+
+            ls
+'flag(1).png'   flag.png   _flag.png.extracted   flag.txt   main.wav
+  
+         cd _flag.png.extracted
+         
+        _flag.png.extracted$ ls
+      29  29.zlib  9B3B.zip  secret
+
+
+_flag.png.extracted$ cd secret
+
+          _flag.png.extracted/secret$ ls
+               flag.png
+
+              sz flag.png   (#to dowload "flag.png")
+ 
+# After opening the file we get the req. flag
+
+#picoCTF{Hiddinng_An_imag3_within_@n_ima9e_d55982e8}
